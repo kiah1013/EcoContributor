@@ -21,6 +21,9 @@ class UserAuth: ObservableObject {
 @main
 
 struct EcoContributorAppApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
     @StateObject var userAuth = UserAuth()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("isDarkMode") private var isDarkMode = false
